@@ -5,7 +5,7 @@
 	"https://projecteuler.net/problem=1"
 	[]
 	(loop [sum 0 i 0]
-		(if (> i 1000)
+		(if (>= i 1000)
 			sum
 			(if (or (= (mod i 5) 0) (= (mod i 3) 0))
 				(recur (+ sum i) (inc i))
