@@ -52,4 +52,4 @@
   "Project Euler"
   [& args]
   (when (not (nil? args))
-  	(println (eval (read-string (format "(project-euler.core/problem_%s)" (nth args 0)))))))
+		(println (eval (read-string (format "(time (project-euler.core/problem_%s))" (nth args 0)))))))
