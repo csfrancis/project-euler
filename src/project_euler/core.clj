@@ -11,6 +11,17 @@
 				(recur (+ sum i) (inc i))
 				(recur sum (inc i))))))
 
+(defn problem_2
+	"https://projecteuler.net/problem=2"
+	[]
+	(loop [m 1 n 1 sum 0]
+		(let [r (+ m n)]
+			(if (> r 4000000)
+				sum
+				(if (= (mod r 2) 0)
+					(recur n r (+ sum r))
+					(recur n r sum))))))
+
 (defn problem_3
 	"https://projecteuler.net/problem=3"
 	[]
