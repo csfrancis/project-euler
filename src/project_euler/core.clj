@@ -32,6 +32,21 @@
 				(recur (/ n p) p (conj factors p))
 				(recur n (+ p 1) factors)))))
 
+(defn problem_4
+	"https://projecteuler.net/problem=4"
+	[]
+	(letfn [(palindrome? [n]
+		(and
+			(=
+				(mod (count n) 2) 0)
+				(let [mid (/ (count n) 2)]
+					(=
+						(subs n 0 mid)
+						(clojure.string/reverse (subs n mid))))
+				))]
+		(last (sort (filter
+			(fn [x] (palindrome? (str x)))
+			(for [x (reverse (range 1000)) y (reverse (range 1000))] (* x y)))))))
 
 (defn -main
   "Project Euler"
