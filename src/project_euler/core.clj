@@ -48,6 +48,21 @@
       (fn [x] (palindrome? (str x)))
       (for [x (reverse (range 1000)) y (reverse (range 1000))] (* x y)))))))
 
+(defn problem_5
+  "https://projecteuler.net/problem=5"
+  []
+  (let [divisible? (fn [n]
+    (loop [n n p 2]
+      (if (> p 20)
+        true
+        (if (not= (mod n p) 0)
+          false
+          (recur n (+ p 1))))))]
+    (loop [n 20]
+      (if (divisible? n)
+        n
+        (recur (+ n 20))))))
+
 (defn -main
   "Project Euler"
   [& args]
