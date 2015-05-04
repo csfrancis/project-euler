@@ -63,6 +63,13 @@
         n
         (recur (+ n 20))))))
 
+(defn problem_6
+  "https://projecteuler.net/problem=6"
+  []
+  (-
+    (reduce * (repeat 2 (reduce + (take 100 (iterate inc 1)))))
+    (reduce + (map #(* % %) (take 100 (iterate inc 1))))))
+
 (defn -main
   "Project Euler"
   [& args]
